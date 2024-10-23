@@ -400,3 +400,328 @@ topLayer=toTop;
 <p id=layer3 onMouseOver=mover('layer3');>This is the first layer</p>
 </body>
 </html>
+
+
+
+
+BCA
+V SEMESTER
+WEB PROGRAMMING LAB
+ 
+Part -B
+ 
+6)Develop a simple calculator to perform arithmetic (addition, subtraction, multiplication and division) operations on given two numbers. Use an html tag that allows the user to input two numbers and to display the result of arithmetic operation. Write suitable HTML and JavaScript and CSS to your simple calculator. The following figure show sample document display.
+ 
+6 Program: -
+<html>
+    <head>
+        <title>input tutorial</title>
+        <script lang="javascript">
+            function addNumbers(clickedValue)
+            {
+                var val1=parseInt(document.getElementById("value1").value);
+                var val2=parseInt(document.getElementById("value2").value);
+                var btnValue = document.getElementById(clickedValue).innerText;
+                var andD = document.getElementById('answer')
+                if(btnValue=="ADD")
+                    document.getElementById("answer").innerText = val1+val2
+                else if(btnValue=="SUB")
+                    document.getElementById("answer").innerText = val1-val2
+                else if(btnValue=="MUL")
+                    document.getElementById("answer").innerText = val1*val2
+                else if(btnValue=="DIV")
+                    document.getElementById("answer").innerText = val1/val2
+            }
+            function sz()
+            {
+                document.getElementById("value1").value="";
+                document.getElementById("value2").value="";
+                document.getElementById("answer").innerText="";
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <div style="margin:25vh auto;width:300px;padding:20px;background-color:lightblue;border:5px solid aqua;border-radius:20px;">
+                <h2>simple calculator</h2>
+                Number 1=<input type="text" id="value1" name="value1" value=""/><br><br>
+                Number 2=<input type="text" id="value2" name="value2" value=""/><br><br>
+                result = <span id="answer"></span><br><br>
+                <button  id="ADD"  onclick="addNumbers('ADD')">ADD</button>
+                <button  id="SUB"  onclick="addNumbers('SUB')">SUB</button>
+                <button  id="MUL"  onclick="addNumbers('MUL')">MUL</button>
+                <button  id="DIV"  onclick="addNumbers('DIV')">DIV</button>
+                <button  id="CLEAR" onclick="sz()">CLEAR</button>
+            </div>
+        </center>
+    </body>
+</html>
+ 
+ 
+ 
+7) Create a web page using two image files, which switch between one another as the mouse pointer moves over the image. Use the on Mouse Over and on Mouse out event handlers.
+ 
+7 Program: -
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+ 
+function normalImg() {
+  document.getElementById("smile").src = "./smiley.gif"
+}
+function singing() {
+  document.getElementById("smile").src = "./sing.gif"
+}
+ 
+</script>
+</head>
+<body>
+ 
+<img onmouseout="normalImg()" border="0" src="smiley.gif" alt="Smiley" width="300" height="320" id="smile"
+onmouseover="singing()" border="0" src="sing.gif" alt="singing" width="300" height="320">
+ 
+<p>onmouse out and onmouseover changing images</p>
+ 
+</body>
+</html>
+8) Create a form for Student information. Write JavaScript code to find Total, Average, Result and Grade.
+ 
+8 Program: -
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<script type = "text/javascript">
+    function calc()
+    {
+        var m1,m2,m3,avg = 0,total = 0, result = "",grade = "";
+        m1 = parseInt(document.form1.wp.value);
+        m2 = parseInt(document.form1.sp.value);
+        m3 = parseInt(document.form1.cg.value);
+        total = m1+m2+m3;
+        avg = total/3;
+        if( m1 < 35 || m2 < 35 || m3 < 35)
+        {
+            result = "fail";
+            grade = "D";
+        }
+        else if(avg >= 75)
+        {
+            result = "Distinction";
+            grade = "A+";
+        }
+        else if(avg >= 60 && avg < 75)
+        {
+            result = "First class";
+            grade = "A";
+        }
+        else if(avg >= 50 && avg < 60)
+        {
+            result = "Second class";
+            grade = "B";
+        }
+        else if(avg >=35 && avg < 50)
+        {
+            result = "Pass class";
+            grade = "C";
+        }
+        else  if (avg < 35)
+        {
+            result = "Fail";
+            Grade = "D";
+        }
+        document.form1.result.value = result;
+        document.form1.grade.value = grade;
+        document.form1.total.value = total;
+        document.form1.average.value = avg;
+       
+    }
+</script>
+</head>
+<body>
+    <form name = "form1">
+        <table border = "1">
+            <tr>
+                <td> Student Name</td>
+                <td><input type = "text"  /></td>
+            </tr>
+            <tr>
+                <td colspan = "2" align = "center">Subject Marks</td>
+            </tr>
+            <tr>
+                <td>Web Programming</td>
+                <td><input type = "text" name = "wp" /></td>
+            </tr>
+            <tr>
+                <td>Computer Graphics</td>
+                <td><input type = "text" name = "cg" /></td>
+            </tr>
+            <tr>
+                <td>System Programming</td>
+                <td><input type = "text" name = "sp" /></td>
+ 
+            </tr>
+            <tr>
+                <td colspan = "2" align = "center"><input type = "button"   onclick = "calc()" value = "calculte" /></td>
+            </tr>          
+            <tr>
+                <td>Total</td>
+                <td><input type = "text" name = "total"/></td>
+ 
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td><input type = "text" name = "average" /></td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type = "text" name = "result" /></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td><input type = "text" name = "grade"/></td>
+            </tr>
+ 
+        </table>
+    </form>
+</body>
+</html>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+9) Develop and demonstrate using jQuery to solve the following:
+A) Fade in and fade out all division elements.
+B) Animate an element, by changing its height and width.
+ 
+9 Program: -
+A) <!DOCTYPE html>
+<html>
+<head>
+<script src="./jquery-1.11.1.min.js"></script>
+<title>Fade in and fade out all division elements</title>
+</head>
+<body>
+<div style="background:#2E9AFE;width:100%;">My Effect is fadeIn and fadeOut Effect</div>
+<button id="btn2">Fade In (3 Second)</button>
+<button id="btn1">Fade Out (3 Second)</button>
+ 
+<script>
+$(document).ready(function() {
+    $("#btn1").click(function() {
+        $("div").fadeOut(3000);
+    });
+ 
+    $("#btn2").click(function() {
+        $("div").fadeIn(3000);
+    });
+});
+</script>
+</body>
+</html>
+B) <!DOCTYPE html>
+<html>
+<head>
+<script src="./jquery-1.11.1.min.js"></script>
+<meta charset="utf-8">
+<title>Animate an element, by changing its height and width</title>
+</head>
+<body>
+<button id="btn1">Animate height & width</button>
+<button id="btn2">Reset</button>
+<div id="box" style="background:#B45F04;height:100px;width:100px;margin:6px;"></div>
+<script>
+    $( "#btn1" ).click(function() {
+  $( "#box" ).animate({
+   width: "300px",
+   height: "300px",
+    }, 1500 );
+});
+ 
+$( "#btn2" ).click(function() {
+  $( "#box" ).animate({
+   width: "100px",
+   height: "100px",    
+    }, 1500 );
+});
+ 
+</script>
+</body>
+</html>
+ 
+ 
+ 
+10) Develop and demonstrate using jQuery to solve the following:
+A) Limit character input in the text area including count.  
+B) Based on check box, disable/enable the form submit button. 
+ 
+10 Program: -
+A) <!DOCTYPE html>
+<html>
+<head>
+<script src="./jquery-1.11.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>Limit character input in the textarea including count</title>
+<style type="text/css">
+textarea {
+  display:block;
+  margin:1em 0;
+}  
+</style>  
+</head>
+<body>
+<form>
+<label>Maximum 15 characters</label>
+<textarea id="textarea" maxlength="15"></textarea>
+  <span id="rchars">15</span> Character(s) Remaining
+</form>
+<script>
+  var maxLength = 15;
+$('textarea').keyup(function() {
+  var textlen = maxLength - $(this).val().length;
+  $('#rchars').text(textlen);
+});
+ 
+</script>
+</body>
+</html>
+ 
+B) <!DOCTYPE html>
+<html>
+<head>
+<script src="./jquery-1.11.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>Disable/enable the form submit button</title>
+</head>
+<body>
+<input id="accept" name="accept" type="checkbox" value="y"/>I accept<br>  
+<input id="submitbtn" disabled="disabled" name="Submit" type="submit" value="Submit" />
+<script>
+  $('#accept').click(function() {
+  if ($('#submitbtn').is(':disabled')) {
+      $('#submitbtn').removeAttr('disabled');
+    } else {
+      $('#submitbtn').attr('disabled', 'disabled');
+    }
+});
+ 
+</script>
+</body>
+</html>
+ 
